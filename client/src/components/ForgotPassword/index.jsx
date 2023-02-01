@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = `http://localhost:5000/forget-password`;
+			const url = `https://mern-authentication-api-16k2.onrender.com/forget-password`;
 			const { data } = await axios.post(url, {email});
 			setMsg(data.message);
 			console.log(data)
