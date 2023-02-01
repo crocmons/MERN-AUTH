@@ -20,7 +20,7 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:5000/register";
+			const url = "https://mern-authentication-api-16k2.onrender.com/register";
 			const { data: res } = await axios.post(url, data);
 			setMsg(res.message);
 			navigate("/");
