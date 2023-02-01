@@ -9,7 +9,7 @@ const PasswordReset = () => {
 	const [msg, setMsg] = useState("");
 	const [error, setError] = useState("");
 	const param = useParams();
-	const url = `http://localhost:5000/reset-password/${param._id}/${param.token}`;
+	const url = `https://mern-authentication-api-16k2.onrender.com/reset-password/${param._id}/${param.token}`;
 
 	useEffect(() => {
 		const verifyUrl = async () => {
