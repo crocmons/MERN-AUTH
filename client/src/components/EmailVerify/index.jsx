@@ -12,7 +12,7 @@ const EmailVerify = () => {
 	useEffect(() => {
 		const verifyEmailUrl = async () => {
 			try {
-				const url = `http://localhost:5000/reset-password/${param._id}/${param.token}`;
+				const url = `https://mern-authentication-api-16k2.onrender.com/reset-password/${param._id}/${param.token}`;
 				const { data } = await axios.get(url);
 				console.log(data);
 				setValidUrl(true);
