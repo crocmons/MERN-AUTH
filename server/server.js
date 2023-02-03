@@ -103,7 +103,7 @@ app.post("/forget-password",async(req,res)=>{
             secure: false,
             auth: {
                 user: "noreply@gmail.com", // Hardcode It
-                pass: "mypassword" // Hardcode It
+                pass: "adqmoqguzksldiys" // Hardcode It
             },
 		tls: { rejectUnauthorized: false }
           });
