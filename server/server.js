@@ -108,7 +108,7 @@ app.post("/forget-password",async(req,res)=>{
 		tls: { rejectUnauthorized: false }
           });
         let mailOptions ={
-            from: "noreply@gmail.com", // Hardcode It
+            from: "fatimaara784@gmail.com", // Hardcode It
             to: email, // list of receivers. This can be done via variable
             subject:"Forget Password Reset",
             text:link
