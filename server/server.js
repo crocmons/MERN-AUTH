@@ -92,21 +92,22 @@ app.post("/forget-password",async(req,res)=>{
         const token = jwt.sign({email:existingUser.email, id:existingUser._id},secret,{expiresIn:"5m"});
         const link = `https://mern-authentication-api-16k2.onrender.com/reset-password/${existingUser._id}/${token}`;
        
+//          const email = req.body.email;
+//          const subject = req.body.subject;
+//          const message = req.body.message;
 
         var transporter = nodemailer.createTransport({
             
             service: 'gmail',
-            // host: 'smtp.gmail.com',
-            // port: 465,
-            // secure: true,
             auth: {
-                user: 'cbc@gmail.com',
-                pass: '123456789'
+                user: "noreply@myserver.com", // Hardcode It
+                pass: "mypassword" // Hardcode It
             },
+		tls: { rejectUnauthorized: false }
           });
         let mailOptions ={
-            from: 'youremail@gmail.com', // sender address
-            to: 'youremail@gmail.com',
+            from: "noreply@myserver.com", // Hardcode It
+            to: email, // list of receivers. This can be done via variable
             subject:"Forget Password Reset",
             text:link
         };
