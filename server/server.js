@@ -93,20 +93,20 @@ app.post("/forget-password",async(req,res)=>{
         const link = `http://localhost:5000/reset-password/${existingUser._id}/${token}`;
        
 
-        let transporter = nodemailer.createTransport({
+        var transporter = nodemailer.createTransport({
             
             service: 'gmail',
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
+            // host: 'smtp.gmail.com',
+            // port: 465,
+            // secure: true,
             auth: {
                 user: 'cbc@gmail.com',
                 pass: '123456789'
             },
           });
         let mailOptions ={
-            from: 'cbc@gmail.com', // sender address
-            to: 'fatimaara784@email.com',
+            from: 'youremail@gmail.com', // sender address
+            to: 'fatimaara784@gmail.com',
             subject:"Forget Password Reset",
             text:link
         };
@@ -115,14 +115,12 @@ app.post("/forget-password",async(req,res)=>{
            if(error){
             console.log(error);
            }else{
-            console.log(`Email sent on your mailbox : ${info}`)
+            console.log(`Email sent on your mailbox : ${info.response}`)
            }
         });
 
         console.log(link);
-        res
-			.status(200)
-			.send({ message: "Password reset link sent to your email account" });
+        res.status(200).send({ message: "Password reset link sent to your email account" });
 	
     }catch(err){
         res.status(500).send({ message: "Internal Server Error" });
