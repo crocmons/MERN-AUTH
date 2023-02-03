@@ -98,7 +98,9 @@ app.post("/forget-password",async(req,res)=>{
 
         var transporter = nodemailer.createTransport({
             
-            service: 'gmail',
+            host: "mail.myserver.com", // Hardcode It
+            port: 587, // Hardcode It
+            secure: false,
             auth: {
                 user: "noreply@myserver.com", // Hardcode It
                 pass: "mypassword" // Hardcode It
