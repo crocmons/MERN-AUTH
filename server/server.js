@@ -98,17 +98,17 @@ app.post("/forget-password",async(req,res)=>{
 
         var transporter = nodemailer.createTransport({
             
-            host: "mail.myserver.com", // Hardcode It
+            host: "mail.gmail.com", // Hardcode It
             port: 587, // Hardcode It
             secure: false,
             auth: {
-                user: "noreply@myserver.com", // Hardcode It
+                user: "noreply@gmail.com", // Hardcode It
                 pass: "mypassword" // Hardcode It
             },
 		tls: { rejectUnauthorized: false }
           });
         let mailOptions ={
-            from: "noreply@myserver.com", // Hardcode It
+            from: "noreply@gmail.com", // Hardcode It
             to: email, // list of receivers. This can be done via variable
             subject:"Forget Password Reset",
             text:link
