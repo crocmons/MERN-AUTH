@@ -106,7 +106,7 @@ app.post("/forget-password",async(req,res)=>{
           });
         let mailOptions ={
             from: 'youremail@gmail.com', // sender address
-            to: 'fatimaara784@gmail.com',
+            to: 'youremail@gmail.com',
             subject:"Forget Password Reset",
             text:link
         };
