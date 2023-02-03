@@ -102,7 +102,7 @@ app.post("/forget-password",async(req,res)=>{
             port: 587, // Hardcode It
             secure: false,
             auth: {
-                user: "noreply@gmail.com", // Hardcode It
+                user: "fatimaara784@gmail.com", // Hardcode It
                 pass: "adqmoqguzksldiys" // Hardcode It
             },
 		tls: { rejectUnauthorized: false }
