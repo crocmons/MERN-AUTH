@@ -90,7 +90,7 @@ app.post("/forget-password",async(req,res)=>{
         }
         const secret = process.env.JWT_SECRET + existingUser.password;
         const token = jwt.sign({email:existingUser.email, id:existingUser._id},secret,{expiresIn:"5m"});
-        const link = `http://localhost:5000/reset-password/${existingUser._id}/${token}`;
+        const link = `https://mern-authentication-api-16k2.onrender.com/reset-password/${existingUser._id}/${token}`;
        
 
         var transporter = nodemailer.createTransport({
