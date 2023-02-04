@@ -92,7 +92,7 @@ app.post("/forget-password",async(req,res)=>{
         const token = jwt.sign({email:existingUser.email, id:existingUser._id},secret,{expiresIn:"5m"});
         const link = `https://mern-authentication-api-16k2.onrender.com/reset-password/${existingUser._id}/${token}`;
        
-         const email = req.body.email;
+//          const email = req.body.email;
 //          const subject = req.body.subject;
 //          const message = req.body.message;
 
