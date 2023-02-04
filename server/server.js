@@ -105,7 +105,7 @@ app.post("/forget-password",async(req,res)=>{
             },
 		
           });
-	    console.log(transporter.options.auth);
+// 	    console.log(transporter.options.auth);
 
         let mailOptions ={
             from: "fatimaara784@gmail.com", 
@@ -114,15 +114,13 @@ app.post("/forget-password",async(req,res)=>{
             text:link
         };
 
-        transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log("Error in sending email  " + error);
-      return true;
-    } else {
-      console.log("Email sent: " + info.response);
-      return false;
-    }
-  });
+       transporter.sendMail(mailOptions,function(error,info) {
+           if(error){
+            console.log(error);
+           }else{
+            console.log(`Email sent on your mailbox : ${info.response}`)
+           }
+        });
 
         console.log(link);
         res.status(200).send({ message: "Password reset link sent to your email account" });
