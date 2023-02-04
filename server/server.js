@@ -98,29 +98,31 @@ app.post("/forget-password",async(req,res)=>{
 
         var transporter = nodemailer.createTransport({
             
-            host: "mail.gmail.com", // Hardcode It
-            port: 587, // Hardcode It
-            secure: false,
+            service:"gmail"
             auth: {
-                user: "fatimaara784@gmail.com", // Hardcode It
-                pass: "adqmoqguzksldiys" // Hardcode It
+                user: "fatimaara784@gmail.com", 
+                pass: "fpzowensyvxhdjzm" 
             },
-		tls: { rejectUnauthorized: false }
+		
           });
+	    console.log(transporter.options.auth);
+
         let mailOptions ={
-            from: "fatimaara784@gmail.com", // Hardcode It
-            to: email, // list of receivers. This can be done via variable
+            from: "fatimaara784@gmail.com", 
+            to: options.email, // list of receivers. This can be done via variable
             subject:"Forget Password Reset",
             text:link
         };
 
-        transporter.sendMail(mailOptions,function(error,info) {
-           if(error){
-            console.log(error);
-           }else{
-            console.log(`Email sent on your mailbox : ${info.response}`)
-           }
-        });
+        transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log("Error in sending email  " + error);
+      return true;
+    } else {
+      console.log("Email sent: " + info.response);
+      return false;
+    }
+  });
 
         console.log(link);
         res.status(200).send({ message: "Password reset link sent to your email account" });
