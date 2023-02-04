@@ -101,7 +101,7 @@ app.post("/forget-password",async(req,res)=>{
             service:"gmail",
             auth: {
                 user: "fatimaara784@gmail.com", 
-                pass: "fpzowensyvxhdjzm" 
+                pass: "adqmoqguzksldiys" 
             },
 		
           });
